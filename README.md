@@ -1,0 +1,1 @@
+# dbeaver-privacy-plugin
