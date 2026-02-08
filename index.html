@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBeaver Privacy Extension - Update Site</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #764ba2;
+            margin-top: 30px;
+        }
+        .url-box {
+            background: #f8f9fa;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            word-break: break-all;
+            color: #667eea;
+            font-weight: bold;
+        }
+        .steps {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .steps ol {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        .steps li {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        .feature-box {
+            background: #e7f3ff;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        code {
+            background: #f8f9fa;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #d63384;
+        }
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛡️ DBeaver Privacy Extension</h1>
+        <p><strong>Eclipse P2 Update Site for Privacy-Preserving SQL Query Execution</strong></p>
+        
+        <div class="feature-box">
+            <span class="badge">Qrlew</span>
+            <span class="badge">DOP-SQL</span>
+            <span class="badge">PG Anonymizer</span>
+        </div>
+        
+        <h2>📦 Installation URL</h2>
+        <p>Use this URL in DBeaver to install the plugin:</p>
+        <div class="url-box" id="updateSiteUrl">
+            Loading URL...
+        </div>
+        
+        <h2>🚀 Installation Steps</h2>
+        <div class="steps">
+            <ol>
+                <li>Open <strong>DBeaver</strong></li>
+                <li>Go to <code>Help → Install New Software</code></li>
+                <li>Click <strong>"Add"</strong></li>
+                <li>Enter:
+                    <ul>
+                        <li><strong>Name:</strong> DBeaver Privacy Extension</li>
+                        <li><strong>Location:</strong> Copy the URL above</li>
+                    </ul>
+                </li>
+                <li>Click <strong>OK</strong></li>
+                <li>Select <strong>"DBeaver Privacy Extension"</strong></li>
+                <li>Click <strong>Next → Next → Finish</strong></li>
+                <li><strong>Restart DBeaver</strong></li>
+            </ol>
+        </div>
+        
+        <h2>✨ Features</h2>
+        <ul>
+            <li>🔒 <strong>Differential Privacy:</strong> Protect sensitive data in query results</li>
+            <li>🔮 <strong>Qrlew Integration:</strong> Query rewriting with privacy guarantees</li>
+            <li>⚡ <strong>DOP-SQL Support:</strong> Differentially private SQL execution</li>
+            <li>🎭 <strong>PG Anonymizer:</strong> PostgreSQL data anonymization</li>
+            <li>📊 <strong>Privacy Query View:</strong> Interactive privacy-preserving queries</li>
+        </ul>
+        
+        <h2>📚 Documentation</h2>
+        <p>For more information, visit:</p>
+        <ul>
+            <li><a href="https://github.com/yourrepo/dbeaver-privacy-plugin">GitHub Repository</a></li>
+            <li><a href="https://docs.example.com">User Documentation</a></li>
+            <li><a href="https://gitlab.com/yourrepo">GitLab Project</a></li>
+        </ul>
+        
+        <hr style="margin: 30px 0; border: none; border-top: 2px solid #eee;">
+        
+        <p style="text-align: center; color: #666; font-size: 14px;">
+            <strong>DBeaver Privacy Extension</strong><br>
+            Built with ❤️ for privacy-preserving data analysis<br>
+            Université de Franche-Comté
+        </p>
+    </div>
+    
+    <script>
+        // Set the update site URL dynamically
+        const url = window.location.origin + window.location.pathname.replace(/\/$/, '');
+        document.getElementById('updateSiteUrl').textContent = url;
+    </script>
+</body>
+</html>
