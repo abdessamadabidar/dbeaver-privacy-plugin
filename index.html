@@ -4,147 +4,237 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DBeaver Privacy Extension - Update Site</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto+Slab:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #333;
-        }
-        .container {
-            background: white;
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            font-family: 'Roboto Slab', serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #ffffff;
+            color: #1a1423;
+            line-height: 1.6;
+            font-size: 15px;
         }
         h1 {
-            color: #667eea;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 15px;
-            margin-bottom: 30px;
+            font-family: 'Roboto Slab', serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            border-bottom: 2px solid #1a1423;
+            padding-bottom: 12px;
+            color: #1a1423;
         }
         h2 {
-            color: #764ba2;
-            margin-top: 30px;
+            font-family: 'Roboto Slab', serif;
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 35px;
+            margin-bottom: 12px;
+            color: #1a1423;
+        }
+        p {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+        .subtitle {
+            font-size: 14px;
+            color: #4a4453;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+        .url-container {
+            position: relative;
         }
         .url-box {
-            background: #f8f9fa;
-            border: 2px solid #667eea;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-            font-family: 'Courier New', monospace;
-            font-size: 16px;
+            background: #f5f5f5;
+            border: 1px solid #1a1423;
+            padding: 12px;
+            padding-right: 80px;
+            margin: 15px 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 13px;
             word-break: break-all;
-            color: #667eea;
-            font-weight: bold;
+            border-radius: 4px;
+            color: #1a1423;
+            height: 15px;
+        }
+        .copy-button {
+            position: absolute;
+            top: 50%;
+            right: 12px;
+            transform: translateY(-50%);
+            background: #ffffff;
+            border: 1px solid #1a1423;
+            color: #1a1423;
+            padding: 6px 14px;
+            font-family: 'Roboto Slab', serif;
+            font-size: 12px;
+            font-weight: 700;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        .copy-button:hover {
+            background: #1a1423;
+            color: #ffffff;
+        }
+        .copy-button:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+        .copy-button.copied {
+            background: #1a1423;
+            color: #ffffff;
         }
         .steps {
-            background: #f8f9fa;
-            border-left: 4px solid #667eea;
-            padding: 20px;
-            margin: 20px 0;
+            background: #f9f9f9;
+            border-left: 3px solid #1a1423;
+            padding: 15px 20px;
+            margin: 15px 0;
         }
         .steps ol {
-            margin: 10px 0;
-            padding-left: 25px;
+            margin: 8px 0;
+            padding-left: 18px;
         }
         .steps li {
             margin: 10px 0;
-            line-height: 1.6;
+            font-size: 14px;
         }
-        .feature-box {
-            background: #e7f3ff;
-            border-radius: 8px;
-            padding: 15px;
-            margin: 15px 0;
+        .steps ul {
+            margin: 6px 0;
+            padding-left: 18px;
+        }
+        ul {
+            padding-left: 22px;
+        }
+        li {
+            margin: 6px 0;
+            font-size: 14px;
         }
         code {
-            background: #f8f9fa;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-family: 'Courier New', monospace;
-            color: #d63384;
+            background: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 13px;
+            color: #1a1423;
+        }
+        a {
+            color: #1a1423;
+            text-decoration: underline;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+        hr {
+            margin: 35px 0;
+            border: none;
+            border-top: 1px solid #cccccc;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 1px solid #e0e0e0;
+            color: #666666;
+            font-size: 13px;
         }
         .badge {
             display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 14px;
-            margin-right: 10px;
+            border: 1px solid #1a1423;
+            padding: 3px 8px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            font-size: 12px;
+            border-radius: 3px;
+            background: #ffffff;
+            color: #1a1423;
+        }
+        strong {
+            font-weight: 700;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🛡️ DBeaver Privacy Extension</h1>
-        <p><strong>Eclipse P2 Update Site for Privacy-Preserving SQL Query Execution</strong></p>
-        
-        <div class="feature-box">
-            <span class="badge">Qrlew</span>
-            <span class="badge">DOP-SQL</span>
-            <span class="badge">PG Anonymizer</span>
-        </div>
-        
-        <h2>📦 Installation URL</h2>
-        <p>Use this URL in DBeaver to install the plugin:</p>
+    <h1>DBeaver Privacy Extension</h1>
+    <p class="subtitle">Eclipse P2 Update Site for Privacy-Preserving SQL Query Execution</p>
+    
+    <div>
+        <span class="badge">Qrlew</span>
+        <span class="badge">DOP-SQL</span>
+        <span class="badge">PG Anonymizer</span>
+    </div>
+    
+    <h2>Installation URL</h2>
+    <p>Use this URL in DBeaver to install the plugin:</p>
+    <div class="url-container">
         <div class="url-box" id="updateSiteUrl">
             Loading URL...
         </div>
-        
-        <h2>🚀 Installation Steps</h2>
-        <div class="steps">
-            <ol>
-                <li>Open <strong>DBeaver</strong></li>
-                <li>Go to <code>Help → Install New Software</code></li>
-                <li>Click <strong>"Add"</strong></li>
-                <li>Enter:
-                    <ul>
-                        <li><strong>Name:</strong> DBeaver Privacy Extension</li>
-                        <li><strong>Location:</strong> Copy the URL above</li>
-                    </ul>
-                </li>
-                <li>Click <strong>OK</strong></li>
-                <li>Select <strong>"DBeaver Privacy Extension"</strong></li>
-                <li>Click <strong>Next → Next → Finish</strong></li>
-                <li><strong>Restart DBeaver</strong></li>
-            </ol>
-        </div>
-        
-        <h2>✨ Features</h2>
-        <ul>
-            <li>🔒 <strong>Differential Privacy:</strong> Protect sensitive data in query results</li>
-            <li>🔮 <strong>Qrlew Integration:</strong> Query rewriting with privacy guarantees</li>
-            <li>⚡ <strong>DOP-SQL Support:</strong> Differentially private SQL execution</li>
-            <li>🎭 <strong>PG Anonymizer:</strong> PostgreSQL data anonymization</li>
-            <li>📊 <strong>Privacy Query View:</strong> Interactive privacy-preserving queries</li>
-        </ul>
-        
-        <h2>📚 Documentation</h2>
-        <p>For more information, visit:</p>
-        <ul>
-            <li><a href="https://github.com/yourrepo/dbeaver-privacy-plugin">GitHub Repository</a></li>
-            <li><a href="https://docs.example.com">User Documentation</a></li>
-            <li><a href="https://gitlab.com/yourrepo">GitLab Project</a></li>
-        </ul>
-        
-        <hr style="margin: 30px 0; border: none; border-top: 2px solid #eee;">
-        
-        <p style="text-align: center; color: #666; font-size: 14px;">
-            <strong>DBeaver Privacy Extension</strong><br>
-            Built with ❤️ for privacy-preserving data analysis<br>
-            Université de Franche-Comté
-        </p>
+        <button id="copyButton" class="copy-button" onclick="copyUrl()">Copy</button>
+    </div>
+    
+    <h2>Installation Steps</h2>
+    <div class="steps">
+        <ol>
+            <li>Open <strong>DBeaver</strong></li>
+            <li>Go to <code>Help → Install New Software</code></li>
+            <li>Click <strong>Add</strong></li>
+            <li>Enter:
+                <ul>
+                    <li><strong>Name:</strong> DBeaver Privacy Extension</li>
+                    <li><strong>Location:</strong> Copy the URL above</li>
+                </ul>
+            </li>
+            <li>Click <strong>OK</strong></li>
+            <li>Select <strong>DBeaver Privacy Extension</strong></li>
+            <li>Click <strong>Next → Next → Finish</strong></li>
+            <li><strong>Restart DBeaver</strong></li>
+        </ol>
+    </div>
+    
+    <h2>Documentation</h2>
+    <p>For more information, visit:</p>
+    <ul>
+        <li><a href="https://github.com/abdessamadabidar/dbeaver-privacy-plugin">GitHub Repository</a></li>
+        <li><a href="https://docs.example.com">User Documentation</a></li>
+        <li><a href="https://gitlab.com/yourrepo">GitLab Project</a></li>
+    </ul>
+    
+    <div class="footer">
+        <strong>DBeaver Privacy Extension</strong><br>
+        Université de Franche-Comté<br>
+        UFR ST M2 ISL 2025/2026
     </div>
     
     <script>
         // Set the update site URL dynamically
         const url = window.location.origin + window.location.pathname.replace(/\/$/, '');
         document.getElementById('updateSiteUrl').textContent = url;
+        
+        // Copy URL to clipboard
+        function copyUrl() {
+            const urlText = document.getElementById('updateSiteUrl').textContent;
+            const button = document.getElementById('copyButton');
+            
+            navigator.clipboard.writeText(urlText).then(() => {
+                // Change button text to "Copied!"
+                button.textContent = 'Copied!';
+                button.classList.add('copied');
+                
+                // Reset after 2 seconds
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                    button.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+                alert('Failed to copy URL. Please copy manually.');
+            });
+        }
     </script>
 </body>
 </html>
