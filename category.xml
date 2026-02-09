@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?pde version="3.6"?>
-<site>
-  <feature url="features/fr.univ.dp.showquery.feature_1.0.0.202602081533.jar" id="fr.univ.dp.showquery.feature" version="1.0.0">
-    <category name="privacy"/>
-  </feature>
-  <category-def name="privacy" label="Privacy Tools"/>
-</site>
