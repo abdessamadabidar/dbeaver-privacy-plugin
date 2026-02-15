@@ -159,24 +159,21 @@
         }
         
         .note {
-            font-size: 11px;
+            font-size: 12px;
         }
 
         .note > strong {
-            color: firebrick;
+            color: rgb(34, 120, 178);
         }
         .important {
-            font-size: 11px;
+            font-size: 12px;
             font-style: italic;
         }
 
-        .important > strong {
-            color: firebrick;
-        }
 
         .limitation {
-            background: #fce1e1;
-            border-left: 3px solid firebrick;
+            background: #eff8ff;
+            border-left: 3px solid rgb(34, 120, 178);
             padding: 15px 20px;
             margin: 15px 0;
         }
@@ -207,7 +204,7 @@
     </style>
 </head>
 <body>
-    <h1>DBeaver Privacy Extension</h1>
+    <h1>PrivBeaver Extension</h1>
     <p class="subtitle">
         A DBeaver plugin that brings differential privacy to SQL query execution, protecting sensitive data while maintaining data utility for analysis.
         This plugin integrates the three following tools :
@@ -222,7 +219,7 @@
     <p class="important"><strong>Important: </strong>The execution of SQL queries using the PG Anonymizer tool requires a PostgreSQL Anonymizer extension properly installed and configured.</p>
     <div class="limitation">
         <p class="note">
-            <strong>Note: </strong> PostgreSQL Anonymizer only works on Linux and is not supported on Windows or macOS.
+            PostgreSQL Anonymizer only works on Linux and is not supported on Windows or macOS.
             
             Please refer to the <a href="https://postgresql-anonymizer.readthedocs.io/en/latest/INSTALL/">official documentation</a> for more information.
         </p>
@@ -256,6 +253,16 @@
             <li>Select <strong>DBeaver Privacy Extension</strong></li>
             <li>Click <strong>Next → Next → Finish</strong></li>
             <li><strong>Restart DBeaver</strong></li>
+        </ol>
+    </div>
+
+    <h2>Usage</h2>
+    <div class="steps">
+        <ol>
+            <li>Write your SQL query in DBeaver's SQL Editor</li>
+            <li>Go to <code>Window → PrivBeaver</code></li>
+            <li>Choose a tool and set parameters</li>
+            <li>Click <strong>Execute Privacy Query</strong></li>
         </ol>
     </div>
     
